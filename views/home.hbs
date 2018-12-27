@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- charset lets browser know how to render characters -->
+    <meta charset="utf-8">
+    <title>Some Website</title>
+  </head>
+  <body>
+    {{> header}}
+    <p>{{screamIt welcomeMessage}}</p>
+
+    {{> footer}}
+  </body>
+</html>
+
+
+<!-- create template that will be rendered when someone visits the root
+res.send - change from json to a call to res.render, rendering a brand new home.hbs
+make the template file - duplicate about.hbs - add a new property welcome message in p tag
+the about page will not support welcome message, app.get add welcomeMessage
