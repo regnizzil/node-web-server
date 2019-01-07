@@ -2,6 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// grabs the PORT environment variable that heroku set OR default of 3000
+const port = process.env.PORT || 3000;
+
 // make a new express app, set it to the return result from calling express
     //as a function
 // no arguments, configuration happens in a different way down below
@@ -98,10 +101,11 @@ app.get('/bad', (req, res) => {
 });
 
 // binds app to a port on our machine
+// set using variable that grabs environment variable PORT set by heroku OR default of 3000
 // port 3000 is a popular port for developing locally
 // after you start app in console, can view in browser using localhost:3000
 // has a second optional argument, a function that does something once the
     //serveris up because it can take a little bit of time to get started
-app.listen(3000, () => {
-  console.log('Server is up on port 3000')
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`)
 });
